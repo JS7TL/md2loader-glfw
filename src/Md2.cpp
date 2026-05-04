@@ -160,11 +160,9 @@ void Md2::LoadModel(char *md2FileName)
 	md2model::vector *pntlst;
 	mesh *triIndex, *bufIndexPtr;
 
-#ifdef WIN32
+
 	fopen_s(&fp, md2FileName, "rb");
-#else
-	fp = fopen(md2FileName, "rb");
-#endif
+
 	fseek(fp, 0, SEEK_END);
 	length = ftell(fp);
 	fseek(fp, 0, SEEK_SET);
